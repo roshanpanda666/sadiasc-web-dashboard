@@ -1,0 +1,3 @@
+start the frontend 
+connect the database 
+fetch...
