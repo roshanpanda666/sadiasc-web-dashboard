@@ -7,9 +7,19 @@ export default function Page() {
   const [logs, setLogs] = useState([]);
 
   useEffect(() => {
-    fetch('/api/getlogs')
-      .then((res) => res.json())
-      .then((data) => setLogs(data.result)); // newest first
+    const fetchData = async () => {
+      const res = await fetch('/api/getlogs');
+      const data = await res.json();
+      setLogs(data.result);
+    };
+  
+    // Initial fetch
+    fetchData();
+  
+    // Set up polling every 5 seconds
+    const interval = setInterval(fetchData, 3000);
+  
+    return () => clearInterval(interval); // cleanup
   }, []);
 
   return (
