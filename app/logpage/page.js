@@ -1,5 +1,6 @@
 'use client';
 
+import Nav from '@/components/nav';
 import { useEffect, useState } from 'react';
 
 export default function Page() {
@@ -12,13 +13,15 @@ export default function Page() {
   }, []);
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Detection Logs</h1>
+    <div >
+        <Nav></Nav>
+        <div className='w-full bg-[#12141A] text-white py-4 px-26 shadow-md'>
+        <h1 className="text-1xl font-bold mb-4">Detection Logs</h1>
       <div className="space-y-4">
         {logs.map((entry, index) => (
           <div
             key={index}
-            className="p-4 rounded-lg shadow bg-gray-100 border border-gray-300"
+            className="p-4 rounded-lg shadow bg-[#15161D] border border-[#252835]"
           >
             <p><strong>Timestamp:</strong> {entry.timestamp}</p>
             <p><strong>Alarm:</strong> {entry.log.alarm}</p>
@@ -29,6 +32,9 @@ export default function Page() {
           </div>
         ))}
       </div>
+
+        </div>
+      
     </div>
   );
 }

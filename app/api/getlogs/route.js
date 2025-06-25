@@ -7,4 +7,4 @@ export async function GET(){
     const data=await DetectionEvent.find()
     console.log(data);
     return NextResponse.json({result:data})
-}
+}       
