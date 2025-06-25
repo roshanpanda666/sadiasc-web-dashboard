@@ -9,32 +9,51 @@ export default function Page() {
   useEffect(() => {
     fetch('/api/getlogs')
       .then((res) => res.json())
-      .then((data) => setLogs(data.result));
+      .then((data) => setLogs(data.result)); // newest first
   }, []);
 
   return (
-    <div >
-        <Nav></Nav>
-        <div className='w-full bg-[#12141A] text-white py-4 px-26 shadow-md'>
-        <h1 className="text-1xl font-bold mb-4">Detection Logs</h1>
-      <div className="space-y-4">
-        {logs.map((entry, index) => (
-          <div
-            key={index}
-            className="p-4 rounded-lg shadow bg-[#15161D] border border-[#252835]"
-          >
-            <p><strong>Timestamp:</strong> {entry.timestamp}</p>
-            <p><strong>Alarm:</strong> {entry.log.alarm}</p>
-            <p><strong>Face Detected:</strong> {entry.log.face_detection ? 'Yes' : 'No'}</p>
-            <p><strong>Time:</strong> {entry.log.time}</p>
-            <p><strong>Camera:</strong> {entry.log.camera}</p>
-            <p><strong>Number:</strong> {entry.log.number}</p>
-          </div>
-        ))}
-      </div>
+    <div className="min-h-screen bg-[#12141A] text-white">
+      <Nav />
 
+      <div className="max-w-7xl mx-auto px-4 py-6">
+        {/* Header for Large Screens */}
+        <div className="hidden lg:flex justify-between bg-[#1A1D24] px-6 py-3 rounded-lg font-semibold text-sm text-gray-400 border border-[#252835]">
+          <div className="w-1/5 text-center">Timestamp</div>
+          <div className="w-1/5 text-center">Alarm</div>
+          <div className="w-1/5 text-center">Time</div>
+          <div className="w-1/5 text-center">Camera</div>
+          <div className="w-1/5 text-center">Number</div>
         </div>
-      
+
+        {/* Log Entries */}
+        <div className="mt-4 space-y-4">
+          {logs.map((entry, index) => (
+            <div
+              key={index}
+              className="bg-[#15161D] border border-[#252835] rounded-lg p-4 text-sm"
+            >
+              {/* Desktop layout */}
+              <div className="hidden lg:flex justify-between text-center">
+                <div className="w-1/5">{entry.timestamp}</div>
+                <div className="w-1/5">{entry.log?.alarm}</div>
+                <div className="w-1/5">{entry.log?.time}</div>
+                <div className="w-1/5">{entry.log?.camera}</div>
+                <div className="w-1/5">{entry.log?.number}</div>
+              </div>
+
+              {/* Mobile layout */}
+              <div className="lg:hidden space-y-1">
+                <p><span className="text-gray-400">Timestamp:</span> {entry.timestamp}</p>
+                <p><span className="text-gray-400">Alarm:</span> {entry.log?.alarm}</p>
+                <p><span className="text-gray-400">Time:</span> {entry.log?.time}</p>
+                <p><span className="text-gray-400">Camera:</span> {entry.log?.camera}</p>
+                <p><span className="text-gray-400">Number:</span> {entry.log?.number}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
