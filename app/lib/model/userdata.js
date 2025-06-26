@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 const logSchema = new mongoose.Schema({
   alarm: { type: String, required: true },
   face_detection: { type: Boolean, required: true },
-  time: { type: String, required: true },
+  detection: { type: String, required: true },
   camera: { type: Number, required: true },
   number: { type: String, required: true } // changed from Mixed to String for phone number
 }, { _id: false });

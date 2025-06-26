@@ -31,7 +31,7 @@ export default function Page() {
         <div className="hidden lg:flex justify-between bg-[#1A1D24] px-6 py-3 rounded-lg font-semibold text-sm text-gray-400 border border-[#252835]">
           <div className="w-1/5 text-center">Timestamp</div>
           <div className="w-1/5 text-center">Alarm</div>
-          <div className="w-1/5 text-center">Time</div>
+          <div className="w-1/5 text-center">Detection</div>
           <div className="w-1/5 text-center">Camera</div>
           <div className="w-1/5 text-center">Number</div>
         </div>
@@ -47,7 +47,7 @@ export default function Page() {
               <div className="hidden lg:flex justify-between text-center">
                 <div className="w-1/5">{entry.timestamp}</div>
                 <div className="w-1/5">{entry.log?.alarm}</div>
-                <div className="w-1/5">{entry.log?.time}</div>
+                <div className="w-1/5">{entry.log?.detection}</div>
                 <div className="w-1/5">{entry.log?.camera}</div>
                 <div className="w-1/5">{entry.log?.number}</div>
               </div>
