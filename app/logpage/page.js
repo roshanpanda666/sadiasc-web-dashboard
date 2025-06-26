@@ -56,7 +56,7 @@ export default function Page() {
               <div className="lg:hidden space-y-1">
                 <p><span className="text-gray-400">Timestamp:</span> {entry.timestamp}</p>
                 <p><span className="text-gray-400">Alarm:</span> {entry.log?.alarm}</p>
-                <p><span className="text-gray-400">Time:</span> {entry.log?.time}</p>
+                <p><span className="text-gray-400">detection:</span> {entry.log?.detection}</p>
                 <p><span className="text-gray-400">Camera:</span> {entry.log?.camera}</p>
                 <p><span className="text-gray-400">Number:</span> {entry.log?.number}</p>
               </div>
