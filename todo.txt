@@ -1,3 +1,2 @@
-start the frontend 
-connect the database 
-fetch...
+start authentication 
+start setting cluster
