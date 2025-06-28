@@ -10,8 +10,6 @@ const adminSchema = new mongoose.Schema({
     type: String,
     required: true
   }
-}, {
-  timestamps: true  // Optional: adds createdAt and updatedAt fields
 });
 
 // Use "admin_users" as the collection name
