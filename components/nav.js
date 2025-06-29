@@ -23,7 +23,7 @@ const Nav = () => {
 
         {/* Nav Links (Desktop) */}
         <div className="hidden lg:flex space-x-6 text-sm font-medium">
-          <Link href='/'> <button className="hover:text-gray-400 transition focus:text-green-300">HOME</button></Link>
+          <Link href='/homepage'> <button className="hover:text-gray-400 transition focus:text-green-300">HOME</button></Link>
           <Link href="/logpage">
             <button className="hover:text-gray-400 transition focus:text-green-300">LOG</button>
           </Link>
