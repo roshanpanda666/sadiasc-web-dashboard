@@ -8,7 +8,7 @@ const Nav = () => {
 
   return (
     <nav className="w-full bg-[#12141A] text-white px-6 py-4 shadow-md">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <div className="max-w-6xl mx-auto flex items-center justify-between">
         {/* Left Side */}
         <div className="text-xl font-semibold">
           S.A.D.I.A.S.C.
