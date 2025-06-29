@@ -1,2 +1,1 @@
-start authentication 
 start setting cluster
