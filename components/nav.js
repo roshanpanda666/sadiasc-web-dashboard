@@ -2,10 +2,10 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react'; // Optional: Lucide icons
-
+import { signOut, useSession } from "next-auth/react";
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const { data: session } = useSession();
   return (
     <nav className="w-full bg-[#12141A] text-white px-6 py-4 shadow-md">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
@@ -28,7 +28,7 @@ const Nav = () => {
             <button className="hover:text-gray-400 transition focus:text-green-300">LOG</button>
           </Link>
           <button className="hover:text-gray-400 transition">SETTING</button>
-          <button className="hover:text-red-400 transition">LOG OUT</button>
+          <button onClick={() => signOut()} className="hover:text-red-400 transition">LOG OUT</button>
         </div>
       </div>
 
