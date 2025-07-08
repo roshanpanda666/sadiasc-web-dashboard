@@ -5,7 +5,7 @@ const page = () => {
   return (
     <div>
       <Nav></Nav>
-      <div>home page</div>
+      <div>home page </div>
     </div>
   )
 }
