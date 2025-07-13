@@ -1,1 +1,1 @@
-work on fetching and displaying settings data - home page
+work on fetching and displaying settings data - home page- frontend
